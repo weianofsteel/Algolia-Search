@@ -1,7 +1,6 @@
 import React from 'react'
 import { withTranslation } from '../i18n'
 import PropTypes from 'prop-types'
-import {Home} from '../component/Home/Home'
 import { NextSeo } from 'next-seo'
 import Algolia from '../component/Algolia/Algolia'
 
