@@ -221,32 +221,7 @@ const Header = ({t,...props}) => {
                 </Grid>
                 
                 <Grid item xs={1} style={{marginTop:'1.5rem', marginLeft:(lang=='en'?'0.8rem':'')}}>
-                  {
-                    mode==='day' &&
-                      <Link 
-                        href={lang=='en'?'./WeianWang_Resume.pdf':'./王偉安_履歷.pdf'}
-                        target='_blank'
-                        rel='noopener'
-                        underline='none'
-                        className={router.pathname == '/Resume'?classes.linkAnchor:classes.link}
-                        style={{fontWeight:(lang=='en'?'normal':'bold')}}
-                      >
-                        {t('resume')}
-                      </Link>
-                  }
-                  {
-                    mode==='night' &&
-                      <Link 
-                        href={lang=='en'?'./WeianWang_Resume.pdf':'./王偉安_履歷.pdf'}
-                        target='_blank'
-                        rel='noopener'
-                        underline='none'
-                        className={router.pathname == '/Resume'?classes.nightLinkAnchor:classes.nightLink}
-                        style={{fontWeight:(lang=='en'?'normal':'bold')}}
-                      >
-                        {t('resume')}
-                      </Link>
-                  }
+      
                 </Grid>
               </Hidden>
 

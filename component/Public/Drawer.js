@@ -107,14 +107,7 @@ const Drawer = ({t,...props}) => {
 
                 <Grid container className={classes.drawerHeader}>
                     <Grid item xs={4}>
-                        <Link 
-                            href={lang=='en'?'./WeianWang_Resume.pdf':'./王偉安_履歷.pdf'}
-                            target='_blank' rel='noopener' 
-                            underline='none' 
-                            className={classes.drawerLink}
-                        >
-                            {t('resume')}
-                        </Link>
+                    
                     </Grid>
                 </Grid>    
 
