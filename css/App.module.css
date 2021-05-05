@@ -1,0 +1,28 @@
+.outerBlock {
+    text-align: center;
+}
+
+.block {
+    width: 600px;
+    height: 600px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: black;
+    position: absolute;
+    top: 15%;
+    left: 32%;
+}
+
+.header {
+    
+    width: 100%;
+}
+
+.input {
+    height: 58px;
+    width: 590px;
+    background-color: #EFEFEF;
+    border: none;
+    border-radius: 30px;;
+}
