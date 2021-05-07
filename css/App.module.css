@@ -89,3 +89,16 @@
     color: #B4BFFF;
     font-size: 13px;
 }
+
+.summaryBlock {
+    padding: 5px;
+    background-color: #656EDA;
+    color: #FFFFFF;
+    font-size: 12px;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.summary {
+    line-height: 15px;
+}
