@@ -8,7 +8,8 @@ let store
 
 const exampleInitialState = {
   mode:'day',
-  lang:'en'
+  lang:'en',
+  test:'111'
 }
 
 export const actionTypes = {
@@ -16,12 +17,18 @@ export const actionTypes = {
   NIGHT: 'NIGHT',
   EN: 'EN',
   ZHHANT: 'ZHHANT',
-  RESET: 'RESET'
+  RESET: 'RESET',
+  TEST: 'TEST'
 }
 
 // REDUCERS
 export const reducer = (state = exampleInitialState, action) => {
   switch (action.type) {
+    case actionTypes.TEST:
+      return {
+        ...state,
+        test: '222'
+      }
     case actionTypes.DAY:
       return {
         ...state,
@@ -54,6 +61,10 @@ export const reducer = (state = exampleInitialState, action) => {
 }
 
 // ACTIONS
+export const toTest = () => {
+  return { type: actionTypes.TEST }
+}
+
 export const toDay = () => {
   return { type: actionTypes.DAY }
 }
