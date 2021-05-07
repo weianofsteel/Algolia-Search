@@ -1,5 +1,6 @@
 import React from 'react'
 import algoliasearch from 'algoliasearch/lite';
+import styles from '../../css/App.module.css'
 
 const client = algoliasearch(
     'XIMRNVJLQ7',
@@ -12,7 +13,7 @@ class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            // list:[]
+
         }
 
         // this.handleSearch = this.handleSearch.bind(this);
@@ -44,12 +45,24 @@ class App extends React.Component {
 
         return(
             <React.Fragment>
-                <div>hello</div>
                 {/* <button onClick={this.handleSearch}>test</button>
                 <button onClick={()=>{console.log(this.state.list, 666)}}>test2</button> */}
                 {list.map((row, i) => 
-                    <div key={i}>{row.author_name}</div>
+                    
+                    <div key={i} className={styles.listBlock} onClick={()=>{open = true;}}>
+                        <span className={styles.title}>{row.title}</span>
+                        <br/>
+                        <span className={styles.author}>{'By ' + row.author_name}</span>
+                        {open&&
+                            <span className={styles.author}>{'By' + row.author_name}</span>
+                        }
+                    </div>
                 )}
+                {/* <div className={styles.listBlock}>
+                    <span className={styles.title}>Hello</span>
+                    <br/>
+                    <span className={styles.author}>Weian</span>
+                </div> */}
             </React.Fragment>
         )
     }
