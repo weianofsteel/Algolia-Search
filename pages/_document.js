@@ -17,7 +17,7 @@ class MyDocument extends Document {
                         property="og:description"
                         content="I am a front-end developer, open to opportunities."
                     />
-                    <meta property="og:image" content="https://raw.githubusercontent.com/weianofsteel/saliejung/master/public/openGraph.jpg" />
+                    <meta property="og:image" content="https://raw.githubusercontent.com/weianofsteel/Algolia-Search/master/public/image/open-graph.png" />
                     
                     <link 
                         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" 
