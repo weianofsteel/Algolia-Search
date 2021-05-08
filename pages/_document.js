@@ -8,9 +8,9 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     
-                    <link rel="shortcut icon" href="/logo.png"/>
+                    <link rel="shortcut icon" href="./image/logo.png"/>
 
-                    <meta property="og:url" content="https://weianofsteel.com" />
+                    <meta property="og:url" content="https://algolia-search-bice.vercel.app/" />
                     <meta property="og:title" content="Algolia Search"/>
                     <meta
                         property="og:description"

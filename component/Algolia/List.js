@@ -6,6 +6,7 @@ const List = (props) => {
 
     const [ summaryOpen , setSummaryOpen ] = React.useState('');
     const [ hover , setHover ] = React.useState('');
+    const [ listPage, setListPage ] = React.useState([]);
 
     const isSearching = useSelector((state) => state.isSearching);
 
@@ -35,8 +36,16 @@ const List = (props) => {
 
     const {
         list,
-        listLength
+        listLength,
     } = props;
+
+    let data = [];
+
+    for(let i = 1; i < Math.ceil(listLength/100) + 1; i++) {
+        data.push(
+            <div className={styles.page}>{i}</div>
+        )
+    }
 
     return(
         <React.Fragment>
@@ -46,10 +55,15 @@ const List = (props) => {
                 <div className={styles.dataAmount}>
                     Searching...
                 </div>:
-                <div className={styles.dataAmount}>
-                    {listLength} posts found
-                </div>
+                <React.Fragment>
+                    <div className={styles.dataAmount}>
+                        {listLength} posts found
+                    </div>
+                    {data}
+                </React.Fragment>
             }
+
+            {/* {data} */}
 
             {/* 搜尋結果list */}
             {list.map((row, i) => 
