@@ -1,17 +1,15 @@
 /* Algolia.js */
 
 .box {
-    position: absolute;
-    width:'100%';
-    transform: translate(-50%);
-    left: 50%;
+    width:'100%';  
 }
 
 .outerBlock {
-    text-align: center;
     background-color: #D7E9E6;
     font-family: 'Roboto';
     padding: 60px;
+    width: 600px;
+    margin: auto;
 }
 
 .block {

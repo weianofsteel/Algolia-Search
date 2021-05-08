@@ -88,7 +88,6 @@ const List = (props) => {
 
             {/* 搜尋結果list */}
             {list.map((row, i) => 
-                    
                 <div 
                     key={i} 
                     className={hover===i?styles.listBlockOnHover:styles.listBlock} 
