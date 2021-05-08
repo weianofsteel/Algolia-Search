@@ -46,7 +46,7 @@ const List = (props) => {
 
     for(let i = 1; i < Math.ceil(listLength/100) + 1; i++) {
         data.push(
-            <div className={styles.page}>
+            <div key={i} className={styles.page}>
                 <button 
                     className={pageSelected===i?styles.pageSelected:styles.pageButton}
                     onClick={()=>{
