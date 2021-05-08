@@ -9,8 +9,8 @@ const HomePage = ({ t }) =>{
         <React.Fragment>
 
             <NextSeo
-                title="Weian Wang | Front-end developer"
-                description="I am a front-end developer, open to opportunities."
+                title="Algolia Search"
+                description="An Algolia Search App built by React"
                 openGraph={{
                     url: 'https://weianofsteel.com',
                     title: 'Weian Wang | Front-end developer',

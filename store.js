@@ -9,7 +9,7 @@ let store
 const exampleInitialState = {
   mode:'day',
   lang:'en',
-  test:'111'
+  isSearching: false
 }
 
 export const actionTypes = {
@@ -18,16 +18,24 @@ export const actionTypes = {
   EN: 'EN',
   ZHHANT: 'ZHHANT',
   RESET: 'RESET',
-  TEST: 'TEST'
+  SUMMARYOPEN: 'SUMMARYOPEN',
+  SUMMARYCLOSE: 'SUMMARYCLOSE',
+  STARTSEARCHING: 'STARTSEARCHING',
+  FINISHSEARCHING: 'FINISHSEARCHING'
 }
 
 // REDUCERS
 export const reducer = (state = exampleInitialState, action) => {
   switch (action.type) {
-    case actionTypes.TEST:
+    case actionTypes.STARTSEARCHING:
       return {
         ...state,
-        test: '222'
+        isSearching: true
+      }
+    case actionTypes.FINISHSEARCHING:
+      return {
+        ...state,
+        isSearching: false
       }
     case actionTypes.DAY:
       return {
@@ -61,8 +69,12 @@ export const reducer = (state = exampleInitialState, action) => {
 }
 
 // ACTIONS
-export const toTest = () => {
-  return { type: actionTypes.TEST }
+export const toStartSearching = () => {
+  return { type: actionTypes.STARTSEARCHING }
+}
+
+export const toFinishSearching = () => {
+  return { type: actionTypes.FINISHSEARCHING }
 }
 
 export const toDay = () => {

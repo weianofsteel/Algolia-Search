@@ -3,7 +3,6 @@ import App from 'next/app'
 import React from 'react';
 import Head from 'next/head'
 import { appWithTranslation } from '../i18n'
-import '../css/main.css'
 import { Provider } from 'react-redux'
 import { useStore } from '../store'
 import { persistStore } from 'redux-persist'
@@ -20,12 +19,11 @@ const MyApp = ({ Component, pageProps }) => {
         <React.Fragment>
 
             <Head>
-                <title>Weian Wang | Frontend Developer</title>
+                <title>Algolia Search</title>
             </Head>
     
             <Provider store={store}>
                 <PersistGate 
-                    // loading={<div>loading</div>} 
                     persistor={persistor}
                 >
                     <Component {...pageProps} />
