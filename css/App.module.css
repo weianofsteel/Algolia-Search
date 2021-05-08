@@ -68,6 +68,7 @@
     font-weight: 500;
     margin-top: 15.5px;
     margin-bottom: 15.5px;
+    display: inline-block;
 }
 
 .listBlock {
@@ -115,14 +116,40 @@
     line-height: 15px;
 }
 
-.page {
+.pageBlock {
     display: inline-block;
+    margin-left: 50px;
     text-align: left;
     font-size: 12px;
     color: #999999;
     font-weight: 500;
-    margin-top: 15.5px;
-    margin-bottom: 15.5px;
+}
+
+.pageList {
+    display: inline-block;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 12px;
+    color: #999999;
+    font-weight: 500;
+}
+
+.pageButton {
+    border: none;
+    color: #999999;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.pageSelected {
+    border: none;
+    color: #000000;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.page {
+    display: inline-block;
 }
 
 /* List.js */

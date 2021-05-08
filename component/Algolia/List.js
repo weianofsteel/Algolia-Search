@@ -6,7 +6,6 @@ const List = (props) => {
 
     const [ summaryOpen , setSummaryOpen ] = React.useState('');
     const [ hover , setHover ] = React.useState('');
-    const [ listPage, setListPage ] = React.useState([]);
 
     const isSearching = useSelector((state) => state.isSearching);
 
@@ -37,33 +36,55 @@ const List = (props) => {
     const {
         list,
         listLength,
+        handleToPage,
+        inputValue,
+        pageSelected
     } = props;
 
+    //頁碼 && 頁籤
     let data = [];
 
     for(let i = 1; i < Math.ceil(listLength/100) + 1; i++) {
         data.push(
-            <div className={styles.page}>{i}</div>
+            <div className={styles.page}>
+                <button 
+                    className={pageSelected===i?styles.pageSelected:styles.pageButton}
+                    onClick={()=>{
+                        handleToPage(inputValue, i-1);
+                    }}
+                >
+                    {i}
+                </button>
+            </div>
         )
     }
 
     return(
         <React.Fragment>
             
-            {/* 搜尋狀態和搜尋結果 */}
+            {/* 搜尋狀態  &&搜尋結果 && 頁碼 */}
             {isSearching?
-                <div className={styles.dataAmount}>
-                    Searching...
+                <div style={{textAlign:'left'}}>
+                    <div className={styles.dataAmount}>
+                        Searching...
+                    </div>
                 </div>:
-                <React.Fragment>
+                <div style={{textAlign:'left'}}>
                     <div className={styles.dataAmount}>
                         {listLength} posts found
                     </div>
-                    {data}
-                </React.Fragment>
+                    {listLength > 0 &&
+                        <React.Fragment>
+                            <div className={styles.pageBlock}>
+                                Page
+                            </div>
+                            <div className={styles.pageList}>
+                                {data}
+                            </div>
+                        </React.Fragment>
+                    }
+                </div>
             }
-
-            {/* {data} */}
 
             {/* 搜尋結果list */}
             {list.map((row, i) => 
