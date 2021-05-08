@@ -12,22 +12,12 @@ class MyDocument extends Document {
                     <link rel="shortcut icon" href="/logo.png"/>
 
                     <meta property="og:url" content="https://weianofsteel.com" />
-                    <meta property="og:title" content="Weian Wang | Front-end developer"/>
+                    <meta property="og:title" content="Algolia Search"/>
                     <meta
                         property="og:description"
-                        content="I am a front-end developer, open to opportunities."
+                        content="An Algolia Search App built by React."
                     />
                     <meta property="og:image" content="https://raw.githubusercontent.com/weianofsteel/Algolia-Search/master/public/image/open-graph.png" />
-                    
-                    <link 
-                        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" 
-                        rel="stylesheet">
-                    </link>
-
-                    <link 
-                        href="https://fonts.googleapis.com/css2?family=Anton&display=swap" 
-                        rel="stylesheet">
-                    </link>
 
                     <link 
                         href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" 
@@ -36,11 +26,6 @@ class MyDocument extends Document {
 
                     <link 
                         href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" 
-                        rel="stylesheet">
-                    </link>
-
-                    <link 
-                        href="https://fonts.googleapis.com/css2?family=Rosario&display=swap" 
                         rel="stylesheet">
                     </link>
 

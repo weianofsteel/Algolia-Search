@@ -1,7 +1,0 @@
-{
-    "title":"Package sharing",
-    "description1":"A simple react carousel component. It shows image automatically with optional navbar and control button. The rotation speed is also adjustable.",
-    "description2":"A react type writer animation component. Pass the contents as string to it, all of them will show up letter by letter just like typing. And typing speed is adjustable.",
-    "description3":"A button which can bring you bac to the top of page. You can decide when it appear by setting appearCoordinate. And the way moving back to top is also adjustable.",
-    "link":"Check it on npm"
-}

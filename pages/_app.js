@@ -2,7 +2,6 @@
 import App from 'next/app'
 import React from 'react';
 import Head from 'next/head'
-import { appWithTranslation } from '../i18n'
 import { Provider } from 'react-redux'
 import { useStore } from '../store'
 import { persistStore } from 'redux-persist'
@@ -34,6 +33,4 @@ const MyApp = ({ Component, pageProps }) => {
     )
 }
 
-MyApp.getInitialProps = async (appContext) => ({ ...await App.getInitialProps(appContext) })
-
-export default appWithTranslation(MyApp)
+export default MyApp
