@@ -88,24 +88,24 @@ const List = (props) => {
 
             {/* 搜尋結果list */}
             <div id="list">
-            {list.map((row, i) => 
-                <div 
-                    key={i} 
-                    className={hover===i?styles.listBlockOnHover:styles.listBlock} 
-                    onClick={()=>{handleSummaryOpen(i)}}
-                    onMouseOver={()=>{handleMouseOver(i)}}
-                    onMouseLeave={()=>{handleMouseLeave(i)}}
-                    data-testid="dataList"
-                >
-                    <span className={styles.title}>{row.title}</span>
-                    <div className={styles.author} style={{marginTop:'10px'}}>{'By ' + row.author_name}</div>
-                    {summaryOpen === i &&
-                        <div className={styles.summaryBlock}>
-                            <span className={styles.summary}>{'By' + row.summary}</span>
-                        </div>
-                    }
-                </div>
-            )}
+                {list.map((row, i) => 
+                    <div 
+                        key={i} 
+                        className={hover===i?styles.listBlockOnHover:styles.listBlock} 
+                        onClick={()=>{handleSummaryOpen(i)}}
+                        onMouseOver={()=>{handleMouseOver(i)}}
+                        onMouseLeave={()=>{handleMouseLeave(i)}}
+                        data-testid="dataList"
+                    >
+                        <span className={styles.title}>{row.title}</span>
+                        <div className={styles.author} style={{marginTop:'10px'}}>{'By ' + row.author_name}</div>
+                        {summaryOpen === i &&
+                            <div className={styles.summaryBlock}>
+                                <span className={styles.summary}>{'By' + row.summary}</span>
+                            </div>
+                        }
+                    </div>
+                )}
             </div>
         </React.Fragment>
     )
