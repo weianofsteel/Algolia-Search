@@ -14,14 +14,4 @@ describe('input value', () => {
         const searchInput = screen.getByTestId("searchInput");
         expect(searchInput).toBeInTheDocument();
     })
-
-    // test('handle search', () => {
-    //     store = mockStore(initialState);
-    //     render(<Provider store={store}><Algolia/></Provider>);
-    //     const query = 'java';
-    //     const onChange = jest.fn();
-    //     const searchInput = screen.getByTestId("searchInput");
-    //     fireEvent.change(searchInput, { target: { value: query } });
-    //     expect(searchInput.onChange).toHaveBeenCalled();
-    // })
 })

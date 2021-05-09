@@ -5,7 +5,7 @@ module.exports = {
       '!**/*.d.ts',
       '!**/node_modules/**',
     ],
-    setupFilesAfterEnv: ['./jest.setup.js'],
+    setupFilesAfterEnv: ['./setupTests.js'],
     testPathIgnorePatterns: ['/node_modules/', '/.next/'],
     transform: {
       '^.+\\.(js|jsx|ts|tsx)$': './node_modules/babel-jest',

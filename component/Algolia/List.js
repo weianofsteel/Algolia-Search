@@ -87,6 +87,7 @@ const List = (props) => {
             }
 
             {/* 搜尋結果list */}
+            <div id="list">
             {list.map((row, i) => 
                 <div 
                     key={i} 
@@ -105,6 +106,7 @@ const List = (props) => {
                     }
                 </div>
             )}
+            </div>
         </React.Fragment>
     )
 }
