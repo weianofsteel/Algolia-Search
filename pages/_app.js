@@ -3,15 +3,15 @@ import React from 'react';
 import Head from 'next/head'
 import { Provider } from 'react-redux'
 import { useStore } from '../store'
-import { persistStore } from 'redux-persist'
-import { PersistGate } from 'redux-persist/integration/react'
+// import { persistStore } from 'redux-persist'
+// import { PersistGate } from 'redux-persist/integration/react'
 
 const MyApp = ({ Component, pageProps }) => {
     
     const store = useStore(pageProps.initialReduxState)
-    const persistor = persistStore(store, {}, function () {
-        persistor.persist()
-    })
+    // const persistor = persistStore(store, {}, function () {
+    //     persistor.persist()
+    // })
 
     return(
         <React.Fragment>
@@ -21,11 +21,11 @@ const MyApp = ({ Component, pageProps }) => {
             </Head>
     
             <Provider store={store}>
-                <PersistGate 
+                {/* <PersistGate 
                     persistor={persistor}
-                >
+                > */}
                     <Component {...pageProps} />
-                </PersistGate>
+                {/* </PersistGate> */}
             </Provider>
         
         </React.Fragment>

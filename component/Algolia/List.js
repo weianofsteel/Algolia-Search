@@ -64,12 +64,12 @@ const List = (props) => {
             
             {/* 搜尋狀態  &&搜尋結果 && 頁碼 */}
             {isSearching?
-                <div style={{textAlign:'left'}}>
+                <div data-testid="searchResult" style={{textAlign:'left'}}>
                     <div className={styles.dataAmount}>
                         Searching...
                     </div>
                 </div>:
-                <div style={{textAlign:'left'}}>
+                <div data-testid="searchResult" style={{textAlign:'left'}}>
                     <div className={styles.dataAmount}>
                         {listLength} posts found
                     </div>
@@ -94,6 +94,7 @@ const List = (props) => {
                     onClick={()=>{handleSummaryOpen(i)}}
                     onMouseOver={()=>{handleMouseOver(i)}}
                     onMouseLeave={()=>{handleMouseLeave(i)}}
+                    data-testid="dataList"
                 >
                     <span className={styles.title}>{row.title}</span>
                     <div className={styles.author} style={{marginTop:'10px'}}>{'By ' + row.author_name}</div>
