@@ -101,7 +101,7 @@ const List = (props) => {
                         <div className={styles.author} style={{marginTop:'10px'}}>{'By ' + row.author_name}</div>
                         {summaryOpen === i &&
                             <div className={styles.summaryBlock}>
-                                <span className={styles.summary}>{'By' + row.summary}</span>
+                                <span className={styles.summary}>{ row.summary }</span>
                             </div>
                         }
                     </div>
