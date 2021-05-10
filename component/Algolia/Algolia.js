@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../../css/App.module.css';
 import List from './List';
 import algoliasearch from 'algoliasearch/lite';
@@ -16,21 +16,30 @@ const index = client.initIndex(indexName);
 
 const Algolia = () => {
 
-    const dispatch = useDispatch()
-    const [ inputValue, setInputValue ] = React.useState('');
-    const [ list , setList ] = React.useState([]);
-    const [ listLength , setListLength ] = React.useState(0);
-    const [ pageSelected, setPageSelected ] = React.useState(1);
+    const dispatch = useDispatch();
+    const [ inputValue, setInputValue ] = useState('');
+    const [ list , setList ] = useState([]);
+    const [ listLength , setListLength ] = useState(0);
+    const [ pageSelected, setPageSelected ] = useState(1);
+    const [searchValue, setSearchValue] = useState('');
+
+    useEffect(() => {
+        const delayDebounce = setTimeout(() => {
+            handleSearch(searchValue);
+        }, 1000)
+    
+        return () => clearTimeout(delayDebounce)
+      }, [searchValue])
 
     //搜尋
-    const handleChange = (e) => {
+    const handleSearch = (searchValue) => {
 
         dispatch(toStartSearching());//搜尋中
         setPageSelected(1);//重新搜尋設定頁碼為1
         
-        if(e.target.value){
+        if(searchValue){
             index
-            .search(e.target.value,{
+            .search(searchValue,{
                 page:0,
                 hitsPerPage:100
             })
@@ -54,7 +63,7 @@ const Algolia = () => {
             setListLength(0);
         }
 
-        setInputValue(e.target.value);
+        setInputValue(searchValue);
     }
 
     //變換頁碼
@@ -89,10 +98,10 @@ const Algolia = () => {
                             <input
                                 id="searchInput"
                                 type="text"
-                                value={inputValue}
+                                value={searchValue}
                                 data-testid="searchInput"
                                 className={styles.input}
-                                onChange={handleChange}
+                                onChange={(e)=>{setSearchValue(e.target.value)}}
                                 autoComplete="off"
                             />
 
