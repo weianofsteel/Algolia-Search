@@ -62,7 +62,7 @@ const List = (props) => {
     return(
         <React.Fragment>
             
-            {/* 搜尋狀態  &&搜尋結果 && 頁碼 */}
+            {/* 搜尋狀態  && 搜尋結果 && 頁碼 */}
             {isSearching?
                 <div data-testid="searchResult" style={{textAlign:'left'}}>
                     <div className={styles.dataAmount}>
