@@ -4,15 +4,14 @@ import List from './List';
 import algoliasearch from 'algoliasearch/lite';
 import { useDispatch } from 'react-redux';
 import { toStartSearching, toFinishSearching } from '../../store';
-import { APP_ID, API_KEY, indexName } from '../../config';
 
 const client = algoliasearch(
-    APP_ID,
-    API_KEY,
+    process.env.APP_ID,
+    process.env.API_KEY,
     {protocol: 'https:'}
 );
 
-const index = client.initIndex(indexName);
+const index = client.initIndex(process.env.indexName);
 
 const Algolia = () => {
 
