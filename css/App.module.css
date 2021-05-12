@@ -79,14 +79,7 @@
     cursor: pointer;
 }
 
-.listBlockOnHover {
-    width: 570px;
-    background-color: #647AFF;
-    border-radius: 3px;
-    text-align: left;
-    padding: 15px 10px 15px 10px;
-    margin-top: 5px;
-    cursor: pointer;
+.listBlock:hover{
     box-shadow: 0 0 3px 2px rgba(106, 106, 190, 0.5);
 }
 

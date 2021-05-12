@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 const List = (props) => {    
 
     const [ summaryOpen , setSummaryOpen ] = React.useState('');
-    const [ hover , setHover ] = React.useState('');
 
     const isSearching = useSelector((state) => state.isSearching);
 
@@ -21,16 +20,6 @@ const List = (props) => {
         }else {
             setSummaryOpen(i);
         }
-    }
-
-    // 游標移至表單
-    const handleMouseOver = (i) => {
-        setHover(i);
-    }
-    
-    // 游標離開表單
-    const handleMouseLeave = () => {
-        setHover('');
     }
 
     const {
@@ -91,10 +80,8 @@ const List = (props) => {
                 {list.map((row, i) => 
                     <div 
                         key={i} 
-                        className={hover===i?styles.listBlockOnHover:styles.listBlock} 
+                        className={styles.listBlock} 
                         onClick={()=>{handleSummaryOpen(i)}}
-                        onMouseOver={()=>{handleMouseOver(i)}}
-                        onMouseLeave={()=>{handleMouseLeave(i)}}
                         data-testid="dataList"
                     >
                         <span className={styles.title}>{row.title}</span>
