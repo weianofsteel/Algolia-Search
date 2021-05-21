@@ -53,7 +53,6 @@ const Algolia = () => {
             })
             .catch(err => {
                 dispatch(toFinishSearching());
-                alert('Woops! Try again!');
             }); 
         } else{
             setList([]);
