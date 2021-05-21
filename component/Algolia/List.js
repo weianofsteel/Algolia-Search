@@ -8,12 +8,10 @@ const List = (props) => {
 
     const isSearching = useSelector((state) => state.isSearching);
 
-    // 搜尋更新時清空summary開關
     useEffect(()=>{
         setSummaryOpen('');
       },[isSearching])
 
-    //控制summary開關  
     const handleSummaryOpen = (i) => {
         if(summaryOpen === i) {
             setSummaryOpen('');
@@ -30,7 +28,6 @@ const List = (props) => {
         pageSelected
     } = props;
 
-    //頁碼 && 頁籤
     let data = [];
 
     for(let i = 1; i < Math.ceil(listLength/100) + 1; i++) {
@@ -51,7 +48,6 @@ const List = (props) => {
     return(
         <React.Fragment>
             
-            {/* 搜尋狀態  && 搜尋結果 && 頁碼 */}
             {isSearching?
                 <div data-testid="searchResult" style={{textAlign:'left'}}>
                     <div className={styles.dataAmount}>
@@ -75,7 +71,6 @@ const List = (props) => {
                 </div>
             }
 
-            {/* 搜尋結果list */}
             <div id="list">
                 {list.map((row, i) => 
                     <div 
