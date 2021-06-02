@@ -7,6 +7,7 @@ import { useStore } from '../store'
 const MyApp = ({ Component, pageProps }) => {
     
     const store = useStore(pageProps.initialReduxState)
+    console.log(999, useStore());
 
     return(
         <React.Fragment>

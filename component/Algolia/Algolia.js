@@ -30,11 +30,10 @@ const Algolia = () => {
         return () => clearTimeout(delayDebounce)
       }, [searchValue])
 
-    //搜尋
     const handleSearch = (searchValue) => {
 
-        dispatch(toStartSearching());//搜尋中
-        setPageSelected(1);//重新搜尋設定頁碼為1
+        dispatch(toStartSearching());
+        setPageSelected(1);
         
         if(searchValue){
             index
@@ -43,7 +42,7 @@ const Algolia = () => {
                 hitsPerPage:100
             })
             .then(({ hits, nbHits }) => {
-                dispatch(toFinishSearching());//搜尋完成
+                dispatch(toFinishSearching());
                 if(!hits[0]) {
                     setListLength(0);
                     setList([]);
@@ -65,7 +64,6 @@ const Algolia = () => {
         setInputValue(searchValue);
     }
 
-    //變換頁碼
     const handleToPage = (inputValue, i) => {
         dispatch(toStartSearching());
         setPageSelected(i + 1);
@@ -91,7 +89,6 @@ const Algolia = () => {
                 
                     <div className={styles.block} style={{paddingBottom:'5px'}}>
 
-                        {/* 搜尋欄位 */}
                         <div className={styles.inputBackground}>
                             
                             <input
@@ -106,7 +103,6 @@ const Algolia = () => {
 
                         </div>
 
-                        {/* 列表 */}
                         <List
                             inputValue={inputValue}
                             listLength={listLength}
